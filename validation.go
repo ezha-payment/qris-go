@@ -352,10 +352,10 @@ func isPSPTag(tag string) bool {
 }
 
 // isValidCriteria reports whether c is one of the allowed merchant
-// criteria codes.
+// criteria codes (see the Criteria* constants).
 func isValidCriteria(c string) bool {
-	switch c {
-	case "UMI", "UKE", "UME", "UBE", "URE":
+	switch MerchantCriteria(c) {
+	case CriteriaUMI, CriteriaUKE, CriteriaUME, CriteriaUBE, CriteriaURE:
 		return true
 	default:
 		return false

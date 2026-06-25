@@ -31,18 +31,18 @@ func main() {
 }
 
 func buildSamplePayload() string {
-	qrisAccount := tlv("00", "ID.CO.QRIS.WWW") +
+	qrisAccount := tlv("00", string(qris.GUIQRISNational)) +
 		tlv("01", "9360091500001234567") +
 		tlv("02", "ID1020012345678") +
-		tlv("03", "UMI")
+		tlv("03", string(qris.CriteriaUMI))
 
 	parts := []string{
 		tlv("00", "01"),
 		tlv("01", "11"),
 		tlv("51", qrisAccount),
 		tlv("52", "4812"),
-		tlv("53", "360"),
-		tlv("58", "ID"),
+		tlv("53", string(qris.CurrencyIDR)),
+		tlv("58", string(qris.CountryID)),
 		tlv("59", "WARUNG SAMPLE"),
 		tlv("60", "JAKARTA"),
 	}
@@ -58,9 +58,11 @@ func printPayload(result *qris.Payload) {
 	fmt.Printf("Merchant City        : %s\n", result.MerchantCity)
 	fmt.Printf("Postal Code          : %s\n", result.PostalCode)
 	fmt.Printf("MCC                  : %s\n", result.MerchantCategoryCode)
-	fmt.Printf("Currency             : %s\n", result.TransactionCurrency)
+	fmt.Printf("Currency             : %s (%s)\n",
+		result.TransactionCurrency, qris.CurrencyCode(result.TransactionCurrency).Description())
 	fmt.Printf("Transaction Amount   : %s\n", emptyAsDash(result.TransactionAmount))
-	fmt.Printf("Country              : %s\n", result.CountryCode)
+	fmt.Printf("Country              : %s (%s)\n",
+		result.CountryCode, qris.CountryCode(result.CountryCode).Description())
 	fmt.Printf("CRC                  : %s\n", result.CRC)
 
 	fmt.Println("\n=== Merchant Account Info ===")
@@ -87,10 +89,16 @@ func printPayload(result *qris.Payload) {
 }
 
 func printAccount(acc qris.MerchantAccount) {
-	fmt.Printf("  GUI                : %s\n", acc.GloballyUniqueIdentifier)
+	fmt.Printf("  GUI                : %s (%s)\n",
+		acc.GloballyUniqueIdentifier, qris.GUI(acc.GloballyUniqueIdentifier).Description())
 	fmt.Printf("  MPAN               : %s\n", emptyAsDash(acc.MPAN))
 	fmt.Printf("  MID                : %s\n", emptyAsDash(acc.MID))
-	fmt.Printf("  Merchant Criteria  : %s\n", emptyAsDash(acc.MerchantCriteria))
+	if acc.MerchantCriteria != "" {
+		fmt.Printf("  Merchant Criteria  : %s (%s)\n",
+			acc.MerchantCriteria, qris.MerchantCriteria(acc.MerchantCriteria).Description())
+	} else {
+		fmt.Printf("  Merchant Criteria  : —\n")
+	}
 	if len(acc.Raw) > 0 {
 		fmt.Printf("  Raw sub-tags       : %v\n", acc.Raw)
 	}
