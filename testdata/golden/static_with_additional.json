@@ -1,0 +1,32 @@
+{
+  "PayloadFormatIndicator": "01",
+  "PointOfInitiationMethod": "11",
+  "MerchantAccountInfo": {
+    "51": {
+      "GloballyUniqueIdentifier": "ID.CO.QRIS.WWW",
+      "MPAN": "9360091500001234567",
+      "MID": "ID1020012345678",
+      "MerchantCriteria": "UMI",
+      "Raw": null
+    }
+  },
+  "MerchantCategoryCode": "4812",
+  "TransactionCurrency": "360",
+  "TransactionAmount": "",
+  "CountryCode": "ID",
+  "MerchantName": "WITH ADDITIONAL",
+  "MerchantCity": "JAKARTA",
+  "PostalCode": "",
+  "AdditionalData": {
+    "BillNumber": "",
+    "MobileNumber": "",
+    "StoreLabel": "STORE01",
+    "LoyaltyNumber": "",
+    "ReferenceLabel": "",
+    "CustomerLabel": "",
+    "TerminalLabel": "T-A01",
+    "PurposeOfTransaction": "",
+    "Raw": null
+  },
+  "CRC": "AD9B"
+}

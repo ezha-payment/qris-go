@@ -1,0 +1,39 @@
+{
+  "PayloadFormatIndicator": "01",
+  "PointOfInitiationMethod": "11",
+  "MerchantAccountInfo": {
+    "26": {
+      "GloballyUniqueIdentifier": "ID.ZIPAY.WWW",
+      "MPAN": "936008250000000000",
+      "MID": "ZPM100000000000",
+      "MerchantCriteria": "UMI",
+      "Raw": null
+    },
+    "51": {
+      "GloballyUniqueIdentifier": "ID.ZIPAY.WWW",
+      "MPAN": "",
+      "MID": "ZPM100000000000",
+      "MerchantCriteria": "UMI",
+      "Raw": null
+    }
+  },
+  "MerchantCategoryCode": "7372",
+  "TransactionCurrency": "360",
+  "TransactionAmount": "",
+  "CountryCode": "ID",
+  "MerchantName": "TESTMRCH",
+  "MerchantCity": "DEPOK",
+  "PostalCode": "16431",
+  "AdditionalData": {
+    "BillNumber": "",
+    "MobileNumber": "",
+    "StoreLabel": "",
+    "LoyaltyNumber": "",
+    "ReferenceLabel": "QRST-00000",
+    "CustomerLabel": "",
+    "TerminalLabel": "A01",
+    "PurposeOfTransaction": "",
+    "Raw": null
+  },
+  "CRC": "C14F"
+}

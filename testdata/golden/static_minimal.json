@@ -1,0 +1,22 @@
+{
+  "PayloadFormatIndicator": "01",
+  "PointOfInitiationMethod": "11",
+  "MerchantAccountInfo": {
+    "51": {
+      "GloballyUniqueIdentifier": "ID.CO.QRIS.WWW",
+      "MPAN": "9360091500000000000",
+      "MID": "ID1020000000000",
+      "MerchantCriteria": "UMI",
+      "Raw": null
+    }
+  },
+  "MerchantCategoryCode": "4812",
+  "TransactionCurrency": "360",
+  "TransactionAmount": "",
+  "CountryCode": "ID",
+  "MerchantName": "MINIMAL TEST",
+  "MerchantCity": "JAKARTA",
+  "PostalCode": "",
+  "AdditionalData": null,
+  "CRC": "5C54"
+}

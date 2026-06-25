@@ -1,0 +1,22 @@
+{
+  "PayloadFormatIndicator": "01",
+  "PointOfInitiationMethod": "12",
+  "MerchantAccountInfo": {
+    "51": {
+      "GloballyUniqueIdentifier": "ID.CO.QRIS.WWW",
+      "MPAN": "9360091500001234567",
+      "MID": "ID1020012345678",
+      "MerchantCriteria": "URE",
+      "Raw": null
+    }
+  },
+  "MerchantCategoryCode": "4812",
+  "TransactionCurrency": "360",
+  "TransactionAmount": "100000",
+  "CountryCode": "ID",
+  "MerchantName": "DYNAMIC MERCH",
+  "MerchantCity": "JAKARTA",
+  "PostalCode": "",
+  "AdditionalData": null,
+  "CRC": "CA43"
+}

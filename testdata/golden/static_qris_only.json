@@ -1,0 +1,22 @@
+{
+  "PayloadFormatIndicator": "01",
+  "PointOfInitiationMethod": "11",
+  "MerchantAccountInfo": {
+    "51": {
+      "GloballyUniqueIdentifier": "ID.CO.QRIS.WWW",
+      "MPAN": "9360091500001234567",
+      "MID": "ID1020012345678",
+      "MerchantCriteria": "UMI",
+      "Raw": null
+    }
+  },
+  "MerchantCategoryCode": "4812",
+  "TransactionCurrency": "360",
+  "TransactionAmount": "",
+  "CountryCode": "ID",
+  "MerchantName": "WARUNG SAMPLE",
+  "MerchantCity": "JAKARTA",
+  "PostalCode": "",
+  "AdditionalData": null,
+  "CRC": "86C9"
+}

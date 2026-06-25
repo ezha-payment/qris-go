@@ -1,0 +1,22 @@
+{
+  "PayloadFormatIndicator": "01",
+  "PointOfInitiationMethod": "11",
+  "MerchantAccountInfo": {
+    "26": {
+      "GloballyUniqueIdentifier": "ID.DANA.WWW",
+      "MPAN": "9360082500000000000",
+      "MID": "DANA0000000000000",
+      "MerchantCriteria": "UMI",
+      "Raw": null
+    }
+  },
+  "MerchantCategoryCode": "5999",
+  "TransactionCurrency": "360",
+  "TransactionAmount": "",
+  "CountryCode": "ID",
+  "MerchantName": "DANA MERCHANT",
+  "MerchantCity": "JAKARTA",
+  "PostalCode": "",
+  "AdditionalData": null,
+  "CRC": "8CCA"
+}
