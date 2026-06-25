@@ -165,6 +165,13 @@ func (b *Builder) Build() (string, error) {
 		return "", err
 	}
 
+	// Enforce the stricter ASPI/EMVCo rules on the assembled payload
+	// before computing the CRC. The presence check above gives
+	// builder-specific guidance; Validate covers value correctness.
+	if err := Validate(b.toPayload()); err != nil {
+		return "", err
+	}
+
 	var sb strings.Builder
 
 	// Tags 00 and 01.
@@ -208,6 +215,25 @@ func (b *Builder) Build() (string, error) {
 	dataNoCRC := sb.String() + "6304"
 	crc := formatCRC(computeCRC([]byte(dataNoCRC)))
 	return dataNoCRC + crc, nil
+}
+
+// toPayload assembles the Builder's current state into a Payload for
+// validation. It mirrors what Build serializes; the empty merchant
+// account map is left as-is so Validate can flag its absence.
+func (b *Builder) toPayload() *Payload {
+	return &Payload{
+		PayloadFormatIndicator:  b.payloadFormatIndicator,
+		PointOfInitiationMethod: b.pointOfInitiationMethod,
+		MerchantAccountInfo:     b.merchantAccounts,
+		MerchantCategoryCode:    b.merchantCategoryCode,
+		TransactionCurrency:     b.transactionCurrency,
+		TransactionAmount:       b.transactionAmount,
+		CountryCode:             b.countryCode,
+		MerchantName:            b.merchantName,
+		MerchantCity:            b.merchantCity,
+		PostalCode:              b.postalCode,
+		AdditionalData:          b.additionalData,
+	}
 }
 
 // validate checks all required fields and returns a single error
