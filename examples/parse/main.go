@@ -1,3 +1,9 @@
+// Command parse decodes a QRIS payload supplied as an argument (or a
+// built-in sample) and prints its fields, demonstrating qris.Parse.
+//
+// Usage:
+//
+//	go run ./examples/parse [payload]
 package main
 
 import (

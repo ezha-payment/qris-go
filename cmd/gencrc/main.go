@@ -3,7 +3,8 @@
 // fixed payload. Used for generating test data.
 //
 // Usage:
-//   echo "00020101...6304XXXX" | go run cmd/gencrc/main.go
+//
+//	echo "00020101...6304XXXX" | go run cmd/gencrc/main.go
 package main
 
 import (
