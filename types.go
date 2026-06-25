@@ -1,13 +1,4 @@
-// Package qris provides parsing and generation of QRIS payloads.
-//
-// QRIS (Quick Response Code Indonesian Standard) is Indonesia's
-// national QR payment standard, compliant with EMVCo Merchant
-// Presented Mode (MPM) specification.
-//
-// Spec references:
-//   - ASPI QRIS Specification
-//   - EMVCo MPM Specification v1.1
-//   - Bank Indonesia PADG No. 21/18/PADG/2019
+// The package-level documentation lives in doc.go.
 package qris
 
 // Payload represents a parsed QRIS payment payload.
