@@ -6,6 +6,7 @@ A Go library for parsing, generating, validating, and converting QRIS payment pa
 [![Go Reference](https://pkg.go.dev/badge/github.com/ezha-payment/qris-go.svg)](https://pkg.go.dev/github.com/ezha-payment/qris-go)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 ![Go Version](https://img.shields.io/badge/go-1.26%2B-blue.svg)
+[![Release](https://img.shields.io/github/v/release/ezha-payment/qris-go.svg)](https://github.com/ezha-payment/qris-go/releases/latest)
 
 ## Why this exists
 
