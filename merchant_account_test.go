@@ -198,11 +198,11 @@ func TestParse_AdditionalData(t *testing.T) {
 
 	payload := buildPayload(
 		tlv("00", "01"),
-		tlv("01", "12"),              // Dynamic
+		tlv("01", "12"), // Dynamic
 		tlv("51", qrisAcc),
 		tlv("52", "4812"),
 		tlv("53", "360"),
-		tlv("54", "100000"),           // Transaction Amount
+		tlv("54", "100000"), // Transaction Amount
 		tlv("58", "ID"),
 		tlv("59", "DYNAMIC MERCH"),
 		tlv("60", "JAKARTA"),

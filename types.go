@@ -1,5 +1,6 @@
-// The package-level documentation lives in doc.go.
 package qris
+
+// The package-level documentation lives in doc.go.
 
 // Payload represents a parsed QRIS payment payload.
 //

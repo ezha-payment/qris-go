@@ -161,6 +161,17 @@ const (
 	GUILinkAja GUI = "ID.LINKAJA.WWW"
 	// GUIGoPay is the GoPay (Gojek) identifier.
 	GUIGoPay GUI = "ID.CO.GOJEK.WWW"
+
+	// GUIPayNowSG is Singapore's PayNow identifier, carried as the
+	// reverse-domain GUI in sub-tag 00 of tag 26 on SGQR payloads. It is
+	// relevant to QRIS cross-border acceptance with Singapore.
+	GUIPayNowSG GUI = "SG.PAYNOW"
+
+	// GUIPromptPayTH is Thailand's PromptPay identifier. Unlike the
+	// reverse-domain GUIs above, PromptPay uses an EMVCo Application
+	// Identifier (AID) carried in sub-tag 00 of tag 29 (or tag 30). It
+	// is relevant to QRIS cross-border acceptance with Thailand.
+	GUIPromptPayTH GUI = "A000000677010111"
 )
 
 // Description returns the human-readable name of the GUI's network or
@@ -179,6 +190,10 @@ func (g GUI) Description() string {
 		return "LinkAja"
 	case GUIGoPay:
 		return "GoPay"
+	case GUIPayNowSG:
+		return "PayNow (Singapore)"
+	case GUIPromptPayTH:
+		return "PromptPay (Thailand)"
 	default:
 		return "Unknown"
 	}

@@ -37,6 +37,9 @@ func TestConstants_StringValues(t *testing.T) {
 		{"GUIOVO", string(GUIOVO), "ID.OVO.WWW"},
 		{"GUILinkAja", string(GUILinkAja), "ID.LINKAJA.WWW"},
 		{"GUIGoPay", string(GUIGoPay), "ID.CO.GOJEK.WWW"},
+
+		{"GUIPayNowSG", string(GUIPayNowSG), "SG.PAYNOW"},
+		{"GUIPromptPayTH", string(GUIPromptPayTH), "A000000677010111"},
 	}
 	for _, c := range cases {
 		if c.got != c.want {
@@ -59,6 +62,12 @@ func TestConstants_Description(t *testing.T) {
 	}
 	if got := GUIDana.Description(); got != "DANA" {
 		t.Errorf("GUIDana.Description() = %q", got)
+	}
+	if got := GUIPayNowSG.Description(); got != "PayNow (Singapore)" {
+		t.Errorf("GUIPayNowSG.Description() = %q", got)
+	}
+	if got := GUIPromptPayTH.Description(); got != "PromptPay (Thailand)" {
+		t.Errorf("GUIPromptPayTH.Description() = %q", got)
 	}
 	if got := CurrencyCode("999").Description(); got != "Unknown" {
 		t.Errorf("unknown currency Description() = %q, want Unknown", got)

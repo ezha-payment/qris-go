@@ -1,0 +1,8 @@
+version: 2
+updates:
+  # Keep GitHub Actions used in CI up to date. The Go module itself has
+  # no third-party dependencies, so no gomod ecosystem entry is needed.
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly

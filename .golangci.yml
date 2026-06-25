@@ -1,0 +1,26 @@
+# golangci-lint configuration (v2 schema).
+# Run: golangci-lint run ./...
+version: "2"
+
+run:
+  timeout: 5m
+
+linters:
+  # Start from the curated default set (errcheck, govet, ineffassign,
+  # staticcheck, unused) and add a few high-signal quality linters.
+  default: standard
+  enable:
+    - misspell    # common spelling mistakes in comments and strings
+    - unconvert   # unnecessary type conversions
+    - errorlint   # correct error wrapping / comparison
+    - bodyclose   # HTTP response bodies are closed (defensive for future)
+    - revive      # golint successor; broad style checks
+
+formatters:
+  enable:
+    - gofmt
+    - goimports
+  settings:
+    goimports:
+      local-prefixes:
+        - github.com/ezha-payment/qris-go
