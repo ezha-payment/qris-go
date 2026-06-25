@@ -226,7 +226,9 @@ func (v *validator) checkMerchantAccounts(accounts map[string]MerchantAccount) {
 func (v *validator) checkMerchantAccount(tag string, acc MerchantAccount) {
 	field := "MerchantAccountInfo[" + tag + "]"
 
-	// Rule 11: GUI length and, for tag 51, exact national value.
+	// Rule 11: GUI length and, for tag 51, exact national value. The
+	// national QRIS routing tag must carry "ID.CO.QRIS.WWW"; acquirer
+	// or PSP specific GUIs belong in tags 26-50.
 	gui := acc.GloballyUniqueIdentifier
 	if len(gui) < 1 || len(gui) > 32 || !isASCIIPrintable(gui) {
 		v.add(field+".GloballyUniqueIdentifier",

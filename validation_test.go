@@ -230,9 +230,10 @@ func TestValidate_GUI_TooLong(t *testing.T) {
 }
 
 func TestValidate_GUI_Tag51WrongValue(t *testing.T) {
+	// Rule 11: tag 51 must carry the national QRIS GUI exactly.
 	p := validPayload()
 	acc := p.MerchantAccountInfo["51"]
-	acc.GloballyUniqueIdentifier = "ID.WRONG.WWW"
+	acc.GloballyUniqueIdentifier = "ID.ZIPAY.WWW"
 	p.MerchantAccountInfo["51"] = acc
 	assertFieldError(t, p, "MerchantAccountInfo[51].GloballyUniqueIdentifier")
 }
